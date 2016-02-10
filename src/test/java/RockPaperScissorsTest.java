@@ -25,4 +25,9 @@ public class RockPaperScissorsTest {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
     assertEquals("Player One Wins!", testRockPaperScissors.gameStatus("Paper", "Rock"));
   }
+  @Test
+  public void gameStatus_playerOneTiesWithPlayerTwo_itsATie() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    assertEquals("Everyone is a Winner!", testRockPaperScissors.gameStatus("Paper", "Paper"));
+  }
 }
