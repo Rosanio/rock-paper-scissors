@@ -23,6 +23,9 @@ public class RockPaperScissors {
   }
 
   public static String gameStatus(String playerOneChoice, String playerTwoChoice) {
+    if(playerOneChoice == playerTwoChoice){
+      return "Everyone is a Winner!";
+    }
     if (checkWinner(playerOneChoice, playerTwoChoice)) {
       return "Player One Wins!";
     }
