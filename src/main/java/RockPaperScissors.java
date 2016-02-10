@@ -21,4 +21,11 @@ public class RockPaperScissors {
     }
     return false;
   }
+
+  public static String gameStatus(String playerOneChoice, String playerTwoChoice) {
+    if (checkWinner(playerOneChoice, playerTwoChoice)) {
+      return "Player One Wins!";
+    }
+    return "Player Two Wins!";
+  }
 }
