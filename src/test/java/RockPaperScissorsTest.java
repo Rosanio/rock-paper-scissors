@@ -36,19 +36,3 @@ public class RockPaperScissorsTest {
     assertEquals("Everyone is a Winner!", testRockPaperScissors.gameStatus("Paper", "Paper"));
   }
 }
-
-public class RockPaperScissorsTest extends FluentTest {
-  public WebDriver webDriver = new HtmlUnitDriver();
-  public WebDriver getDefaultDriver() {
-      return webDriver;
-  }
-
-  @ClassRule
-  public static ServerRule server = new ServerRule();
-
-  @Test
-  public void rootTest() {
-      goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("Leap year detector");
-  }
-}

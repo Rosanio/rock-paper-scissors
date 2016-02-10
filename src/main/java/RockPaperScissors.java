@@ -21,9 +21,12 @@ public class RockPaperScissors {
       HashMap model = new HashMap();
       String playerOne = request.queryParams("playerOne");
       String playerTwo = request.queryParams("playerTwo");
+      String random = playerOne;
       String result = gameStatus(playerOne, playerTwo);
 
       model.put("gameResult", result);
+      model.put("playerOne", playerOne);
+      model.put("playerTwo", playerTwo);
 
       model.put("template", "templates/results.vtl");
       return new ModelAndView(model, layout);
@@ -43,6 +46,7 @@ public class RockPaperScissors {
   }
 
   public static String gameStatus(String playerOneChoice, String playerTwoChoice) {
+    String randomChoice = "";
     if(playerOneChoice.equals("random")) {
       playerOneChoice = randomChoice();
     }
@@ -73,4 +77,6 @@ public class RockPaperScissors {
     }
     return playerChoice;
   }
+
+
 }

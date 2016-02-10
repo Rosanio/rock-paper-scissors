@@ -1,3 +1,39 @@
+* {
+  font-family: fantasy;
+}
+
 body {
   background-image: url("/images/linedpaper.png");
+}
+
+h1 {
+  font-size: 500%;
+  margin-bottom: 70px;
+}
+
+button {
+  margin-top: 70px;
+}
+
+.btn {
+  font-size: 150%;
+  width: 110px;
+  height: 50px;
+}
+
+#submitButton {
+  border: solid 1px solid;
+  border-radius: 100px;
+}
+
+#displayedResult {
+  font-size: 250%;
+  padding-top: 100px;
+  margin-bottom: 70px;
+}
+
+#playAgainBtn {
+  width: 140px;
+  border: solid 1px solid;
+  border-radius: 100px;
 }

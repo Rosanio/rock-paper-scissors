@@ -1,19 +1,27 @@
-<h1>Play Rock Paper Scissors</h1>
+<h1 class="text-center">Play Rock Paper Scissors</h1>
 <form action='/result'>
   <div class="row">
-    <div class="col-sm-6 btn-group"  data-toggle="buttons">
-      <label class="btn btn-default"><input type="radio" name="playerOne" value="Rock">Rock</label>
-      <label class="btn btn-default"><input type="radio" name="playerOne" value="Paper">Paper</label>
-      <label class="btn btn-default"><input type="radio" name="playerOne" value="Scissors">Scissors</label>
-      <label class="btn btn-default"><input type="radio" name="playerOne" value="random">Random</label>
+    <div class="col-sm-6">
+      <div class="text-center" data-toggle="buttons">
+        <h2 class="text-center">Player One</h2>
+        <label class="btn btn-default"><input type="radio" name="playerOne" value="Rock" id="p1Rock">Rock</label>
+        <label class="btn btn-default"><input type="radio" name="playerOne" value="Paper" id="p1Paper">Paper</label>
+        <label class="btn btn-default"><input type="radio" name="playerOne" value="Scissors" id="p1Scissors">Scissors</label>
+        <label class="btn btn-default"><input type="radio" name="playerOne" value="random" id="p1Random">Random</label>
+      </div>
     </div>
-    <div class="col-sm-6 btn-group"  data-toggle="buttons">
-      <label class="btn btn-default"><input type="radio" name="playerTwo" value="Rock">Rock</label>
-      <label class="btn btn-default"><input type="radio" name="playerTwo" value="Paper">Paper</label>
-      <label class="btn btn-default"><input type="radio" name="playerTwo" value="Scissors">Scissors</label>
-      <label class="btn btn-default"><input type="radio" name="playerTwo" value="random">Random</label>
+    <div class="col-sm-6">
+      <div class="text-center" data-toggle="buttons">
+      <h2 class="text-center">Player Two</h2>
+      <label class="btn btn-default"><input type="radio" name="playerTwo" value="Rock" id="p2Rock">Rock</label>
+      <label class="btn btn-default"><input type="radio" name="playerTwo" value="Paper" id="p2Paper">Paper</label>
+      <label class="btn btn-default"><input type="radio" name="playerTwo" value="Scissors" id="p2Scissors">Scissors</label>
+      <label class="btn btn-default"><input type="radio" name="playerTwo" value="random" id="p2Random">Random</label>
+      </div>
     </div>
   </div>
   <br>
-  <button class="btn btn-success" type="submit">Play!</button>
+  <div class="text-center">
+  <button class="btn btn-success" type="submit" id="submitButton">Play!</button>
+</div>
 </form>
