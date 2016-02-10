@@ -12,8 +12,11 @@ public class RockPaperScissors {
   public static Boolean checkWinner(String playerOneChoice, String playerTwoChoice) {
     if (playerOneChoice == "Rock" && playerTwoChoice == "Scissors") {
       return true;
-    }  
+    }
     if (playerOneChoice == "Scissors" && playerTwoChoice == "Paper") {
+      return true;
+    }
+    if (playerOneChoice == "Paper" && playerTwoChoice == "Rock") {
       return true;
     }
     return false;
