@@ -20,4 +20,9 @@ public class RockPaperScissorsTest {
     RockPaperScissors testRockPaperScissors = new RockPaperScissors();
     assertEquals(true, testRockPaperScissors.checkWinner("Paper", "Rock"));
   }
+  @Test
+  public void gameStatus_playerOneWins_playerOneWins() {
+    RockPaperScissors testRockPaperScissors = new RockPaperScissors();
+    assertEquals("Player One Wins!", testRockPaperScissors.gameStatus("Paper", "Rock"));
+  }
 }
