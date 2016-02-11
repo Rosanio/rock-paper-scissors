@@ -13,22 +13,62 @@ public class RockPaperScissors {
     get("/", (request, response) -> {
       HashMap model = new HashMap();
 
+      model.put("template", "templates/players.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/playGame", (request, response) -> {
+      HashMap model = new HashMap();
+
       model.put("template", "templates/play-game.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/result", (request, response) -> {
+    get("/computer", (request, response) -> {
+      HashMap model = new HashMap();
+
+      model.put("template", "templates/play-computer.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/playerResult", (request, response) -> {
       HashMap model = new HashMap();
       String playerOne = request.queryParams("playerOne");
       String playerTwo = request.queryParams("playerTwo");
-      String random = playerOne;
+
+      if(playerOne.length() == 0) {
+        playerOne = randomChoice();
+      }
+      if(playerOne.equals("random")) {
+        playerOne = randomChoice();
+      }
+      if(playerTwo.equals("random")) {
+        playerTwo = randomChoice();
+      }
+      System.out.println(playerOne);
+      String result = gameStatus(playerOne, playerTwo);
+      model.put("gameResult", result);
+      model.put("playerOne", playerOne);
+      model.put("playerTwo", playerTwo);
+
+      model.put("template", "templates/results.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/computerResult", (request, response) -> {
+      HashMap model = new HashMap();
+      String playerOne = request.queryParams("playerOne");
+      if(playerOne.equals("random")) {
+        playerOne = randomChoice();
+      }
+      String playerTwo = randomChoice();
       String result = gameStatus(playerOne, playerTwo);
 
       model.put("gameResult", result);
       model.put("playerOne", playerOne);
       model.put("playerTwo", playerTwo);
 
-      model.put("template", "templates/results.vtl");
+      model.put("template", "templates/computer-result.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
@@ -46,13 +86,6 @@ public class RockPaperScissors {
   }
 
   public static String gameStatus(String playerOneChoice, String playerTwoChoice) {
-    String randomChoice = "";
-    if(playerOneChoice.equals("random")) {
-      playerOneChoice = randomChoice();
-    }
-    if(playerTwoChoice.equals("random")) {
-      playerTwoChoice = randomChoice();
-    }
     if(playerOneChoice.equals(playerTwoChoice)){
       return "Everyone is a Winner!";
     }
